@@ -1,0 +1,2 @@
+Free Energy Density=-1.3108284564070973
+%calculated by function "fed(1.0)" with time 0.001584 seconds

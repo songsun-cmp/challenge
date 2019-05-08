@@ -1,0 +1,2 @@
+Degeneracy of Ground State is about 19285
+%Calculate by function "degeneracy(beta)" for beta=1:10 and take the smallest one 
