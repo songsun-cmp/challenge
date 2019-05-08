@@ -1,5 +1,5 @@
 include("ncon.jl");
-using LinearAlgerba
+#using LinearAlgerba
 function tensor3(beta)
     tensor2(beta)=[exp(-beta) exp(beta); exp(beta) exp(-beta)]; #for AFM Ising model
     eig=eigen(tensor2(beta));
@@ -37,7 +37,11 @@ function partition(beta)
     ncon(Any[T12,T12],Any[[1,2,3,4,5,6,7,8,9,10,11,12],[3,2,1,12,11,10,9,8,7,6,5,4]]);
 end
 
-fed(beta)=-(1/(60*beta))*log(partition(beta))
+fed(beta)=-(1/(60*beta))*log(partition(beta));
+fe(beta)=-(1/(beta))*log(partition(beta));
+delta=1e-5;
+entropy(beta)=((fe(beta+0.5*delta)-fe(beta-0.5*delta))/delta)*beta^2;
+omega(beta)=exp(entropy(beta));
 
 #ncon([pauli[:,:,1],pauli[:,:,3]],[[-2,1],[1,-1]];cont_order=[1],check_network=true) #recording
 #using PyCall
