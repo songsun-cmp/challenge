@@ -1,5 +1,5 @@
 include("ncon.jl");
-#using LinearAlgerba
+using LinearAlgebra
 function tensor3(beta)
     tensor2(beta)=[exp(-beta) exp(beta); exp(beta) exp(-beta)]; #for AFM Ising model
     eig=eigen(tensor2(beta));
@@ -39,9 +39,8 @@ end
 
 fed(beta)=-(1/(60*beta))*log(partition(beta));
 fe(beta)=-(1/(beta))*log(partition(beta));
-delta=1e-5;
-entropy(beta)=((fe(beta+0.5*delta)-fe(beta-0.5*delta))/delta)*beta^2;
-degeneracy(beta)=exp(entropy(beta));
+entropy(beta,delta)=((fe(beta+0.5*delta)-fe(beta-0.5*delta))/delta)*beta^2;
+degeneracy(beta)=exp(entropy(beta,delta));
 
 #ncon([pauli[:,:,1],pauli[:,:,3]],[[-2,1],[1,-1]];cont_order=[1],check_network=true) #recording
 #using PyCall
