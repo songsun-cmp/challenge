@@ -1,3 +1,5 @@
-Degeneracy of Ground State is about 19285
-%Calculate by function "degeneracy(beta)"  and analysis the asymptotic property for beta->Inf (For our code the maximum beta is 10)
 The result of another approach from the "soccer_HuachenZhang.ipynb" : 16000
+
+##################Degeneracy of Ground State is about 19285
+%Calculate by function "degeneracy(beta)"  and analysis the asymptotic property for beta->Inf (For our code the maximum beta is 10)
+
