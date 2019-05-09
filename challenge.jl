@@ -40,7 +40,7 @@ end
 fed(beta)=-(1/(60*beta))*log(partition(beta));
 fe(beta)=-(1/(beta))*log(partition(beta));
 entropy(beta,delta)=((fe(beta+0.5*delta)-fe(beta-0.5*delta))/delta)*beta^2;
-degeneracy(beta)=exp(entropy(beta,delta));
+degeneracy(beta,delta)=exp(entropy(beta,delta));
 
 #ncon([pauli[:,:,1],pauli[:,:,3]],[[-2,1],[1,-1]];cont_order=[1],check_network=true) #recording
 #using PyCall
