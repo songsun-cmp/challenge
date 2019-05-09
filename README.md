@@ -38,7 +38,7 @@ julia> plot(x,y,linewidth=2)
 From the plot we find that the Free energy is approching the accurate ground stat energy -66 when beta is increasing. The result make sence.
 
 ## Benchmark
-@benchmark fed(1)
+benchmark fed(1)
 BenchmarkTools.Trial: 
   memory estimate:  1.10 MiB
   allocs estimate:  2084
